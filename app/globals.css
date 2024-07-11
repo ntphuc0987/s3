@@ -2,32 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*,
+html,
+*::after,
+*::before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.vectorHover:hover svg {
+  @apply stroke-[#CE2D34] fill-[#CE2D34]
+}
+
+@keyframes showFrame {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-frame {
+  animation: showFrame 1s ease-in-out forwards;
+}
+
+.frame1 {
+  animation-delay: 0s;
+}
+
+.frame2 {
+  animation-delay: 0.5s;
+}
+
+.frame3 {
+  animation-delay: 1s;
+}
+
+.frame4 {
+  animation-delay: 1.5s;
+}
+
+.frame5 {
+  animation-delay: 2s;
+}
+
+.frame6 {
+  animation-delay: 2.5s;
+}
+
+.frame7 {
+  animation-delay: 3s;
+}
+
+.frame8 {
+  animation-delay: 3.5s;
+}
+
+.frame9 {
+  animation-delay: 4s;
+}
+
+.frame10 {
+  animation-delay: 4.5s;
+}
+
+.frame11 {
+  animation-delay: 5s;
+}
+
+.frame12 {
+  animation-delay: 5.5s;
+}
+
+.frame13 {
+  animation-delay: 6s;
+}
+
+.frame14 {
+  animation-delay: 6.5s;
+}
+
+.frame15 {
+  animation-delay: 7s;
+}
+
+.frame16 {
+  animation-delay: 7.5s;
+}
+.frame17 {
+  animation-delay: 8s;
 }
