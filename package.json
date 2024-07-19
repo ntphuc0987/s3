@@ -9,10 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "d3-dsv": "^3.0.1",
+    "embla-carousel-autoplay": "^8.1.6",
+    "embla-carousel-react": "^8.1.6",
+    "globe.gl": "^2.32.5",
+    "index-array-by": "^1.4.1",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.395.0",
     "next": "14.2.4",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "three-globe": "^2.31.1"
   },
   "devDependencies": {
     "@types/node": "^20",
