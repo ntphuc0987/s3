@@ -410,6 +410,8 @@ const ClientWorldMap = () => {
           </Popover>
         </div>
 
+        
+
         {/* line */}
         <div className="absolute right-[22%] top-[51.3%] w-[57%] line overflow-hidden">
           <span className="block w-[55rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
