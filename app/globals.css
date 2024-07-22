@@ -106,9 +106,9 @@
 
 @keyframes runline {
   0% {
-   left: -200% 
+   left: -300% 
   }
   100% {
-    left: 0%
+    left: 200%
   }
 }
