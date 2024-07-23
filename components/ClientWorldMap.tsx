@@ -412,45 +412,47 @@ const ClientWorldMap = () => {
         </div>
 
         {/* line */}
-        <div className="absolute right-[22%] top-[51.3%] w-[57%] line overflow-hidden">
-          <span className="block w-[55rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite] "></span>
+        <div className="absolute right-[22%] top-[51.3%] max-sm:top-[55%] w-[57%] line overflow-hidden">
+          <span className="block w-[55rem] max-sm:w-[10rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite] "></span>
         </div>
-        <div className="absolute right-[20%] top-[39.2%] w-[30%] line overflow-hidden rotate-[24deg]">
-          <span className="block w-[20rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
+
+        <div className="absolute right-[20%] top-[39.2%] max-sm:top-[42%] w-[30%] line overflow-hidden rotate-[24deg]">
+          <span className="block w-[20rem] max-sm:w-[5rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
-        <div className="absolute right-[20%] top-[36%] w-[26%] line overflow-hidden rotate-[33deg]">
-          <span className="block w-[20rem] h-[1px] bg-red-600 relative left-[100%] animate-[runline_2s_ease-in-out_infinite]"></span>
+
+        <div className="absolute right-[20%] top-[36%] max-sm:top-[39%] w-[26%] line overflow-hidden rotate-[33deg]">
+          <span className="block w-[20rem] max-sm:w-[5rem] h-[1px] bg-red-600 relative left-[100%] animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
-        <div className="absolute right-[21%] top-[47%] w-[29%] line overflow-hidden rotate-[9deg]">
-          <span className="block w-[20rem] h-[1px] bg-red-600 relative left-[100%] animate-[runline_2s_ease-in-out_infinite]"></span>
+
+        <div className="absolute right-[21%] top-[46.5%] max-sm:top-[50%] w-[29%] line overflow-hidden rotate-[9.5deg]">
+          <span className="block w-[20rem] max-sm:w-[5rem] h-[1px] bg-red-600 relative left-[100%] animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
-        <div className="absolute right-[22%] top-[51.5%] w-[10%] line overflow-hidden">
-          <span className="block w-[5rem] h-[1px] bg-red-600 relative left-[10%]  animate-[runline_2s_ease-in-out_infinite]"></span>
+
+        <div className="absolute right-[22%] top-[51.5%] max-sm:top-[56%] w-[10%] line overflow-hidden">
+          <span className="block w-[5rem] max-sm:w-[1rem] h-[1px] bg-red-600 relative left-[10%]  animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
-        <div className="absolute left-[78%] top-[48%] w-[6%] line overflow-hidden rotate-[144deg]">
-          <span className="block w-[5rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
+        <div className="absolute left-[78%] top-[48%] max-sm:top-[54%] w-[6%] line overflow-hidden rotate-[144deg]">
+          <span className="block w-[5rem] max-sm:w-[1rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
         <div className="absolute left-[74.2%] top-[70%] w-[19%] line overflow-hidden rotate-[239deg]">
-          <span className="block w-[20rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
+          <span className="block w-[20rem] max-sm:w-[2rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
         <div className="absolute left-[75%] top-[69.4%] w-[24%] line overflow-hidden rotate-[224deg]">
-          <span className="block w-[30rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
+          <span className="block w-[30rem] max-sm:w-[2rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
-        <div className="absolute right-[calc(22%)] top-[47%] w-[62%] line overflow-hidden rotate-[4deg]">
-          <span className="block w-[55rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
+        <div className="absolute right-[calc(22%)] top-[47%] max-sm:top-[50%] w-[62%] line overflow-hidden rotate-[4deg]">
+          <span className="block w-[55rem] max-sm:w-[10rem] h-[1px] bg-red-600 relative left-[100%]  animate-[runline_2s_ease-in-out_infinite]"></span>
         </div>
       </div>
 
       {/* Client lists */}
       <div className="">
         <Carousel
-          plugins={
-            [
-              // Autoplay({
-              //   delay: 2000,
-              // }),
-            ]
-          }
+          plugins={[
+            Autoplay({
+              delay: 2000,
+            }),
+          ]}
         >
           <CarouselContent>
             <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2  relative w-[321px] h-[171px]">
