@@ -97,6 +97,7 @@
   }
 }
 
+
 .animated-border {
   display: inline-block;
   padding: 10px;
@@ -104,11 +105,23 @@
   animation: scale-border 2s ease-in-out infinite;
 }
 
+.animated-border-delay1s {
+  animation-delay: 1s;
+}
+.animated-border-delay1-5s {
+  animation-delay: 1.5s;
+}
+.animated-border-delay2s {
+  animation-delay: 2s;
+}
+
 @keyframes runline {
   0% {
-   left: -300% 
+   left: -100% 
   }
   100% {
-    left: 200%
+    left: 100%
   }
 }
+
+
