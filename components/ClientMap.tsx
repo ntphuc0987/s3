@@ -23,6 +23,17 @@ interface Pointer {
   topPercentage: number;
 }
 
+const locations = [
+  { lat: 34.052235, lon: -118.243683 },
+  { lat: -37.867579, lon: 145.048621 },
+  { lat: 1.3521, lon: 103.8198 },
+  { lat: 35.652832, lon: 139.839478 },
+  { lat: 25.396, lon: 68.3578 },
+  { lat: 55.6761, lon: 12.5683 },
+  { lat: 37.9838, lon: 23.7275 },
+  { lat: 25.8256, lon: -111.8867 },
+];
+
 const ClientMap = () => {
   const pointersContainerRef = useRef<HTMLDivElement>(null);
   const mapImageRef = useRef<HTMLDivElement>(null);
@@ -37,15 +48,7 @@ const ClientMap = () => {
     const mapWidth = mapImageRef.current.clientWidth;
     const mapHeight = mapImageRef.current.clientHeight;
 
-    [
-      { lat: 34.052235, lon: -118.243683 },
-      { lat: -37.867579, lon: 145.048621 },
-      { lat: 1.3521, lon: 103.8198 },
-      { lat: 35.652832, lon: 139.839478 },
-      { lat: 25.396, lon: 68.3578 },
-      { lat: 55.6761, lon: 12.5683 },
-      { lat: 37.9838, lon: 23.7275 },
-    ].forEach(({ lat, lon }) => {
+    locations.forEach(({ lat, lon }) => {
       const { x, y } = latLonToOffsets(lat, lon, mapWidth, mapHeight);
       renderPointer(x, y);
     });
@@ -76,17 +79,27 @@ const ClientMap = () => {
   }
 
   function renderPointer(x: number, y: number) {
-    console.log("renderPointer", x, y);
     if (pointersContainerRef.current) {
       const containerWidth = pointersContainerRef.current.offsetWidth;
       const containerHeight = pointersContainerRef.current.offsetHeight;
       const leftPercentage = (x / containerWidth) * 100 - 3;
       const topPercentage = (y / containerHeight) * 100 + 11;
 
-      setPointers((prevPointers) => [
+      /*setPointers((prevPointers) => [
         ...prevPointers,
         { x, y, leftPercentage, topPercentage },
-      ]);
+      ]);*/
+
+      setPointers((prevPointers) => {
+        const pointerExists = prevPointers.some(
+          (pointer) => pointer.x === x && pointer.y === y
+        );
+        if (!pointerExists) {
+          return [...prevPointers, { x, y, leftPercentage, topPercentage }];
+        }
+
+        return prevPointers;
+      });
     }
   }
 
@@ -254,7 +267,6 @@ const ClientMap = () => {
           </CarouselContent>
         </Carousel>
       </div>
-      
     </div>
   );
 };
