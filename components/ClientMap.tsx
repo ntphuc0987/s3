@@ -32,6 +32,7 @@ const locations = [
   { lat: 55.6761, lon: 12.5683 },
   { lat: 37.9838, lon: 23.7275 },
   { lat: 25.8256, lon: -111.8867 },
+  { lat: -41.2865, lon: 174.7762 },
 ];
 
 const ClientMap = () => {
@@ -40,28 +41,33 @@ const ClientMap = () => {
   const [pointers, setPointers] = useState<Pointer[]>([]);
 
   useEffect(() => {
+    // Check if the map image and pointers container refs are set
     if (!mapImageRef.current || !pointersContainerRef.current) {
       console.error("Map image or pointers container not found!");
       return;
     }
 
+    // Get the dimensions of the map image
     const mapWidth = mapImageRef.current.clientWidth;
     const mapHeight = mapImageRef.current.clientHeight;
 
+    // Iterate over each location
     locations.forEach(({ lat, lon }) => {
+      // Convert latitude and longitude to x and y offsets
       const { x, y } = latLonToOffsets(lat, lon, mapWidth, mapHeight);
+      // Render a pointer at the calculated coordinates
       renderPointer(x, y);
     });
   }, []);
 
-  function latLonToOffsets(
+  const latLonToOffsets = (
     latitude: number,
     longitude: number,
     mapWidth: number,
     mapHeight: number
-  ) {
+  ) => {
     const radius = mapWidth / (2 * Math.PI);
-    const FE = 180;
+    const FE = 180; //flase easting
 
     const lonRad = degreesToRadians(longitude + FE);
     const x = lonRad * radius;
@@ -72,13 +78,13 @@ const ClientMap = () => {
     const y = mapHeight / 2 - verticalOffsetFromEquator;
 
     return { x, y };
-  }
+  };
 
-  function degreesToRadians(degrees: number) {
+  const degreesToRadians = (degrees: number) => {
     return (degrees * Math.PI) / 180;
-  }
+  };
 
-  function renderPointer(x: number, y: number) {
+  const renderPointer = (x: number, y: number) => {
     if (pointersContainerRef.current) {
       const containerWidth = pointersContainerRef.current.offsetWidth;
       const containerHeight = pointersContainerRef.current.offsetHeight;
@@ -101,10 +107,11 @@ const ClientMap = () => {
         return prevPointers;
       });
     }
-  }
+  };
 
   return (
     <div className="w-4/5 m-auto">
+      {/* Title */}
       <div className="flex justify-center flex-col items-center mb-[84px]">
         <p className="text-[#4D5562]">
           We work with many clients all over the world
@@ -146,7 +153,7 @@ const ClientMap = () => {
                 <PopoverTrigger>
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-[#CE2D34]"></span>
                   </span>
                 </PopoverTrigger>
                 <PopoverContent
@@ -185,83 +192,83 @@ const ClientMap = () => {
       {/* Client lists */}
       <div className="my-[32px]">
         <Carousel
-          plugins={[
-            Autoplay({
-              delay: 2000,
-            }),
-          ]}
+         plugins={[
+           Autoplay({
+             delay: 2000,
+           }),
+         ]}
         >
           <CarouselContent>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2  relative w-[321px] h-[171px] text">
+            <CarouselItem className="2xl:basis-1/5  lg:basis-1/5 md:basis-1/3 basis-1/2  relative w-[272px] h-[101px] text">
               <Image
                 src="/clients/adclipse.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5  lg:basis-1/4 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/dalkia.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5  lg:basis-1/4 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/luxhub.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5  lg:basis-1/4 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/oracle.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5 lg:basis-1/4 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/pjc.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3  basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5  lg:basis-1/4 md:basis-1/3  basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/adclipse.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5  lg:basis-1/4 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/dalkia.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5 lg:basis-1/4 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/oracle.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="2xl:basis-1/5  lg:basis-1/4 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/pjc.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
           </CarouselContent>

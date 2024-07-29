@@ -447,83 +447,83 @@ const ClientWorldMap = () => {
       {/* Client lists */}
       <div >
         <Carousel
-          plugins={[
-            Autoplay({
-              delay: 2000,
-            }),
-          ]}
+          // plugins={[
+          //   Autoplay({
+          //     delay: 2000,
+          //   }),
+          // ]}
         >
-          <CarouselContent>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2  relative w-[321px] h-[171px] text">
+          <CarouselContent className="flex justify-between">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2  relative w-[272px] h-[101px] text">
               <Image
                 src="/clients/adclipse.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/dalkia.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/luxhub.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/oracle.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/pjc.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3  basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3  basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/adclipse.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/dalkia.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/oracle.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
-            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[321px] h-[171px]">
+            <CarouselItem className="lg:basis-1/5 md:basis-1/3 basis-1/2 relative w-[272px] h-[101px]">
               <Image
                 src="/clients/pjc.jpg"
                 alt="luxhub"
-                width={321}
-                height={171}
+                width={272}
+                height={101}
               />
             </CarouselItem>
           </CarouselContent>
